@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    // Bootstrap CSS
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous')
+  body.container
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ' crossorigin='anonymous')
+    header
+    main
+      .mt-3
+        h2 Formulario de ingreso de producto
+        form(action='http://localhost:8080/api/productos' method='post')
+          .form-group
+            label(for='title') Title:
+            input#title.form-control(type='text' name='title' placeholder='Your product name')
+          .form-group
+            label(for='price') Price:
+            input#price.form-control(type='number' name='price' placeholder="How much your product's worth?")
+          .form-group
+            label(for='thumbnail') Thumbnail:
+            input#thumbnail.form-control(type='text' name='thumbnail' placeholder='A picture of your product')
+          br
+          button.btn.btn-primary(type='submit') Submit
+        a.btn.btn-link(href='http://localhost:8080/api/productos' role='button') Ver los productos
+    footer
